@@ -1,0 +1,99 @@
+::ng-deep .mat-card {
+  display: grid !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+::ng-deep .mat-accordion {
+  margin-bottom: 0 !important;
+  padding: 1% 10% !important;
+  padding-bottom: 0 !important;
+}
+
+::ng-deep .mat-content {
+  display: block !important;
+}
+::ng-deep .mat-expansion-panel-header {
+  min-height: 120px !important;
+}
+
+::ng-deep .mat-expansion-panel-header-title {
+  /* margin: 0 !important; */
+  padding-top: 2%;
+}
+::ng-deep .mat-expansion-panel {
+  margin: 1% !important;
+}
+
+.employee {
+  padding: 5px 25px 10px 25px;
+}
+
+.reporter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+hr {
+  border-color: #051e34;
+  width: 80%;
+  margin-top: 1%;
+}
+
+dd,
+dl {
+  margin: 0;
+  padding: 8px;
+}
+
+dl:nth-child(even) {
+  background-color: #e5e5e5;
+  margin: 0;
+  padding: 8px;
+}
+
+.mat-icon {
+  padding-right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.example-header-image {
+  margin: 0;
+  display: flex;
+  background: #051e34;
+  margin-right: 15px;
+  border-radius: 50%;
+  height: 55px;
+  width: 55px;
+}
+
+.mat-icon-user {
+  font-size: 50px;
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.get-reports-button-container {
+  display: flex;
+  margin: auto;
+  width: 50%;
+  flex-flow: row-reverse;
+}
+
+.get-reports-button {
+  color: white;
+  background: #051e34;
+  padding: 14px 35px;
+  border: none;
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+  outline: none;
+}

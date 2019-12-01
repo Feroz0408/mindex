@@ -1,0 +1,35 @@
+.page-title {
+  text-align: center;
+}
+
+.header-container {
+  display: inline-flex;
+  background: #051e34;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+h1 {
+  color: white;
+  margin: 0;
+  padding: 30px;
+  width: 100%;
+  padding-left: 12%;
+}
+
+.emp-hierarchy {
+  background: white;
+  border: none;
+  color: #051e34;
+  padding: 7px 28px;
+  margin: auto;
+  display: -webkit-box;
+  display: flex;
+  margin-right: 2%;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}

@@ -1,0 +1,87 @@
+<div class="displayToggle" [hidden]="!data.deleted">
+  <div class="edit-delete-container">
+    <mat-icon class="delete-confirm">delete_forever</mat-icon>
+    <h4 mat-dialog-title>
+      Employee {{ data.firstName }} {{ data.lastName }} has been deleted.
+    </h4>
+  </div>
+</div>
+
+<div class="displayToggle" [hidden]="!data.edited">
+  <div class="edit-delete-container">
+    <mat-icon class="edit-confirm">check_circle</mat-icon>
+    <h4 mat-dialog-title>
+      {{ data.firstName }} {{ data.lastName }}'s Compensation Has Been Updated.
+    </h4>
+  </div>
+</div>
+
+<div
+  class="displayToggle"
+  [hidden]="data.popUpCheck === 'delete' ? false : true"
+>
+  <div class="edit-delete-container">
+    <h2 mat-dialog-title>Delete Employee</h2>
+    <mat-dialog-content>
+      <p>
+        Permanently Delete Employee {{ data.firstName }} {{ data.lastName }}?
+      </p>
+      <p>This cannot be undone.</p>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <button mat-raised-button (click)="delete(data, 'deleted')">OK</button>
+      <button mat-button mat-dialog-close>CANCEL</button>
+    </mat-dialog-actions>
+  </div>
+</div>
+
+<div [hidden]="data.popUpCheck === 'edit' ? false : true">
+  <form
+    class="edit-delete-container"
+    (submit)="updateCompensation(data, compensation.value, 'edited')"
+  >
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="First Name"
+        [value]="data.firstName"
+        disabled
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Last Name"
+        [value]="data.lastName"
+        disabled
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Title" [value]="data.position" disabled />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Compensation"
+        required
+        type="number"
+        [value]="data.compensation"
+        #compensation
+      />
+    </mat-form-field>
+    <mat-dialog-actions>
+      <button
+        mat-raised-button
+        [disabled]="
+          compensation.value > 0 && !(compensation.value == data.compensation)
+            ? false
+            : true
+        "
+      >
+        SAVE
+      </button>
+      <button mat-button mat-dialog-close>CANCEL</button>
+    </mat-dialog-actions>
+  </form>
+</div>

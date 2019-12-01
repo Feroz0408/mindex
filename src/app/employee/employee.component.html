@@ -1,0 +1,54 @@
+<mat-card>
+  <mat-accordion class="employee">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <div mat-card-avatar class="example-header-image">
+            <mat-icon class="mat-icon-user">person</mat-icon>
+          </div>
+          <span style="width: 100%;align-items: center;display: flex;">
+            {{ employee.firstName }} {{ employee.lastName }},
+            {{ employee.position }}
+            <br />
+            <mat-panel-description style="display: contents;">
+              Employee ID: {{ employee.id }} Direct Reports:
+              {{ employee.reports ? employee.reports.length : 0 }}
+            </mat-panel-description>
+          </span>
+
+          <div class="get-reports-button-container">
+            <button class="get-reports-button">
+              Click To View Reports
+            </button>
+          </div>
+        </mat-panel-title>
+        <hr />
+      </mat-expansion-panel-header>
+      <dl>
+        <dt>Reports:</dt>
+      </dl>
+      <dl *ngFor="let reporter of employee.reports">
+        <dd>
+          <div style="display: flex;align-items: center;">
+            <div style="width:50%;">
+              {{ reporter.firstName }} {{ reporter.lastName }} ,
+              {{ reporter.position }}
+            </div>
+            <div class="get-reports-button-container">
+              <mat-icon
+                style="color: crimson;"
+                (click)="openDialog(reporter, 'delete')"
+                >delete</mat-icon
+              >
+              <mat-icon
+                style="color:black"
+                (click)="openDialog(reporter, 'edit')"
+                >edit</mat-icon
+              >
+            </div>
+          </div>
+        </dd>
+      </dl>
+    </mat-expansion-panel>
+  </mat-accordion>
+</mat-card>
