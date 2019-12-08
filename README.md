@@ -11,13 +11,14 @@
 - App-level component has been created for all the dialogs (edit, delete, edit-confirmation, and delete-confirmation) with the name my-dialog.
 - Added functionality in EmployeeList component to handle the service calls.
 - The page has been styled.
+- [Link to the Project](https://mindex-challange.firebaseapp.com/)
 
 ## Extras
 
 - The page has been reponsively styled with media queries to make the we page look consistent across all the devices.
 - The employee hierarchy has been visually represented using D3.js which is connected to real-time firestore database (Note: the data for the hierarchy graph is coming from the real-time firestore database. So, the updated data from the app will not be reflected in the graph). the graph has the functionality to add new reports reporting to a employee.
 - The app has been deployed to firebase and can accessed using the below link.
-  [Link to the Project](https://mindex-challange.firebaseapp.com/)
+- [Link to the Project](https://mindex-challange.firebaseapp.com/)
 
 ## What's Provided
 
