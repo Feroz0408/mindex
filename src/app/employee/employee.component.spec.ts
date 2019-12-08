@@ -14,7 +14,6 @@ import {
 import { EmployeeListComponent } from "../employee-list/employee-list.component";
 import { EmployeeComponent } from "./employee.component";
 import { of } from "rxjs";
-import { MyDialogComponent } from "../my-dialog/my-dialog.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { Employee } from "../employee";
 import { MatListModule } from "@angular/material/list";
