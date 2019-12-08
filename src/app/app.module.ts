@@ -7,12 +7,13 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
   MatButtonModule,
   MatCardModule,
-  MatGridListModule,
   MatIconModule,
   MatInputModule,
   MatMenuModule,
   MatDialogModule
 } from "@angular/material";
+
+import { MatGridListModule } from "@angular/material/grid-list";
 
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 
@@ -24,7 +25,7 @@ import { BackendlessMockService } from "./backendless-mock.service";
 import { EmployeeComponent } from "./employee/employee.component";
 import { EmployeeListComponent } from "./employee-list/employee-list.component";
 import { EmployeeService } from "./employee.service";
-import { MyDialogComponent } from "./employee/my-dialog/my-dialog.component";
+import { MyDialogComponent } from "./my-dialog/my-dialog.component";
 
 @NgModule({
   declarations: [

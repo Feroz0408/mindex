@@ -11,7 +11,7 @@
             {{ employee.position }}
             <br />
             <mat-panel-description style="display: contents;">
-              Employee ID: {{ employee.id }} Direct Reports:
+              Employee ID: {{ employee.id }} Reports:
               {{ employee.reports ? employee.reports.length : 0 }}
             </mat-panel-description>
           </span>
@@ -31,23 +31,26 @@
         <dd>
           <div style="display: flex;align-items: center;">
             <div style="width:50%;">
-              {{ reporter.firstName }} {{ reporter.lastName }} ,
-              {{ reporter.position }}
+              {{ reporter["firstName"] }} {{ reporter["lastName"] }} ,
+              {{ reporter["position"] }}
             </div>
             <div class="get-reports-button-container">
               <mat-icon
                 style="color: crimson;"
-                (click)="openDialog(reporter, 'delete')"
+                (click)="openDialog(employee, reporter, 'delete')"
                 >delete</mat-icon
               >
               <mat-icon
                 style="color:black"
-                (click)="openDialog(reporter, 'edit')"
+                (click)="openDialog(reporter, reporter, 'edit')"
                 >edit</mat-icon
               >
             </div>
           </div>
         </dd>
+      </dl>
+      <dl *ngIf="!!employee.reports && employee.reports.length === 0">
+        <dt>No Reports</dt>
       </dl>
     </mat-expansion-panel>
   </mat-accordion>

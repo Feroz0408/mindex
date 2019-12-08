@@ -7,6 +7,10 @@ h2 {
   font-family: sans-serif;
 }
 
+.confirmation-box {
+  padding: 25px;
+  box-shadow: 0 1px 7px -3px black;
+}
 .edit-delete-container {
   padding: 25px;
   box-shadow: 0 1px 7px -3px black;
@@ -31,4 +35,19 @@ h2 {
   justify-content: center;
   width: 100%;
   color: darkslategray;
+}
+
+@media screen and (max-width: 600px) {
+  ::ng-deep .confirmation-box .mat-dialog-title {
+    margin: 0 !important;
+    font-size: 13px !important;
+    line-height: 15px !important;
+    text-align: center;
+  }
+
+  .delete-confirm,
+  .edit-confirm {
+    font-size: 50px;
+    height: 50px;
+  }
 }

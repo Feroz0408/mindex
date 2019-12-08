@@ -1,10 +1,9 @@
 <mat-grid-list class="employee-list" cols="1">
-  <div class="employee-list-container">
-    <mat-grid-tile *ngFor="let emp of employees">
-      <app-employee
-        (passDataToParent)="editDeleteServiceHandler($event)"
-        [employee]="emp"
-      ></app-employee>
-    </mat-grid-tile>
-  </div>
+  <mat-grid-tile *ngFor="let emp of employees">
+    <app-employee
+      (deleteEmployee)="deleteEmployee($event)"
+      (updateEmployeeCompensation)="updateEmployeeCompensation($event)"
+      [employee]="emp"
+    ></app-employee>
+  </mat-grid-tile>
 </mat-grid-list>

@@ -5,5 +5,5 @@ export class Employee {
   position: string;
   compensation: number;
   directReports?: Array<number>;
-  reports?: Array<object>;
+  reports?: Array<Object>;
 }
