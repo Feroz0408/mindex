@@ -17,10 +17,12 @@ export class MyDialogComponent implements OnInit {
 
   ngOnInit() {}
 
+  // function to send back the data to Employee Component on click of permanent delete
   deleteEmployee(employee: Employee, isDeleted: string) {
     this.dialogRef.close({ ...employee, isDeleted });
   }
 
+  // function to send back the data to Employee Component on click of save of employee compensation
   updateEmployeeCompensation(
     employee: Employee,
     compensation: number,
