@@ -1,25 +1,18 @@
-<div class="displayToggle" [hidden]="!data.deleted">
-  <div class="edit-delete-container">
-    <mat-icon class="delete-confirm">delete_forever</mat-icon>
-    <h4 mat-dialog-title>
-      Employee {{ data.firstName }} {{ data.lastName }} has been deleted.
-    </h4>
-  </div>
+<div class="confirmation-box" *ngIf="data.deleted">
+  <mat-icon class="delete-confirm">delete_forever</mat-icon>
+  <h4 mat-dialog-title>
+    Employee {{ data.firstName }} {{ data.lastName }} has been deleted.
+  </h4>
 </div>
 
-<div class="displayToggle" [hidden]="!data.edited">
-  <div class="edit-delete-container">
-    <mat-icon class="edit-confirm">check_circle</mat-icon>
-    <h4 mat-dialog-title>
-      {{ data.firstName }} {{ data.lastName }}'s Compensation Has Been Updated.
-    </h4>
-  </div>
+<div class="confirmation-box" *ngIf="data.edited">
+  <mat-icon class="edit-confirm">check_circle</mat-icon>
+  <h4 mat-dialog-title>
+    {{ data.firstName }} {{ data.lastName }}'s Compensation Has Been Updated.
+  </h4>
 </div>
 
-<div
-  class="displayToggle"
-  [hidden]="data.popUpCheck === 'delete' ? false : true"
->
+<div *ngIf="data.popUpCheck === 'delete'">
   <div class="edit-delete-container">
     <h2 mat-dialog-title>Delete Employee</h2>
     <mat-dialog-content>
@@ -29,16 +22,22 @@
       <p>This cannot be undone.</p>
     </mat-dialog-content>
     <mat-dialog-actions>
-      <button mat-raised-button (click)="delete(data, 'deleted')">OK</button>
+      <button
+        mat-raised-button
+        class="delete-ok"
+        (click)="deleteEmployee(data, 'deleted')"
+      >
+        OK
+      </button>
       <button mat-button mat-dialog-close>CANCEL</button>
     </mat-dialog-actions>
   </div>
 </div>
 
-<div [hidden]="data.popUpCheck === 'edit' ? false : true">
+<div *ngIf="data.popUpCheck === 'edit'">
   <form
     class="edit-delete-container"
-    (submit)="updateCompensation(data, compensation.value, 'edited')"
+    (submit)="updateEmployeeCompensation(data, compensation.value, 'edited')"
   >
     <mat-form-field>
       <input
@@ -66,7 +65,7 @@
         placeholder="Compensation"
         required
         type="number"
-        [value]="data.compensation"
+        [value]="data.compensation || null"
         #compensation
       />
     </mat-form-field>
