@@ -116,13 +116,13 @@ describe("EmployeeComponent", () => {
     expect(component).toBeTruthy();
   }));
 
-  it("should invoke on init function on initialization", async(() => {
+  it("should invoke getAllReports function on initialization", async(() => {
     spyOn(component, "getAllReports");
     fixture.detectChanges();
     expect(component.getAllReports).toHaveBeenCalled();
   }));
 
-  it("should invoke getAllReports function on initialization", () => {
+  it("should invoke getReports function", () => {
     const emp = [
       {
         id: 1,
@@ -148,22 +148,22 @@ describe("EmployeeComponent", () => {
     expect(component.getReports).toHaveBeenCalled();
   });
 
-  it("should ***", () => {
+  it("should check whether allReports is emptied after getAllReports", () => {
     component.getAllReports(employees);
     expect(component.allReports.length).toEqual(0);
   });
 
-  it("should ***", () => {
+  it("should check whether allReports is emptied after getReports", () => {
     component.getReports(employees[3], employees);
     expect(component.allReports.length).toEqual(0);
   });
 
-  it("should ***", () => {
+  it("should check the length of direct reports after report delete", () => {
     component.deleteDirectReport(employees[0], employees[2]);
     expect(employees[0].directReports.length).toEqual(1);
   });
 
-  it("should ***", () => {
+  it("should check the length of direct reports after indirect report delete", () => {
     component.employees = employees;
     component.deleteDirectReport(employees[0], employees[3]);
     expect(employees[1].directReports.length).toEqual(0);

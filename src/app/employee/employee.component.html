@@ -6,11 +6,11 @@
           <div mat-card-avatar class="example-header-image">
             <mat-icon class="mat-icon-user">person</mat-icon>
           </div>
-          <span style="width: 100%;align-items: center;display: flex;">
+          <span class="employee-details">
             {{ employee.firstName }} {{ employee.lastName }},
             {{ employee.position }}
             <br />
-            <mat-panel-description style="display: contents;">
+            <mat-panel-description>
               Employee ID: {{ employee.id }} Reports:
               {{ employee.reports ? employee.reports.length : 0 }}
             </mat-panel-description>
@@ -29,9 +29,9 @@
       </dl>
       <dl *ngFor="let reporter of employee.reports">
         <dd>
-          <div style="display: flex;align-items: center;">
-            <div style="width:50%;">
-              {{ reporter["firstName"] }} {{ reporter["lastName"] }} ,
+          <div class="reporter">
+            <div class="reporter-details">
+              {{ reporter["firstName"] }} {{ reporter["lastName"] }},
               {{ reporter["position"] }}
             </div>
             <div class="get-reports-button-container">

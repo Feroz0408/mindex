@@ -21,7 +21,7 @@ export class EmployeeListComponent implements OnInit {
   ngOnInit(): void {
     this.getAllEmployees();
   }
-
+  // function to get all employees on component Initialization
   getAllEmployees() {
     this.employeeService
       .getAll()
@@ -35,28 +35,34 @@ export class EmployeeListComponent implements OnInit {
       .subscribe(() => {});
   }
 
-  deleteEmployee(combinedObject) {
+  // function to delete Employee Report
+  deleteEmployee(combinedObject: { employee: Employee; reporter: any }) {
     this.employeeService
       .save(combinedObject.employee)
       .pipe(catchError(this.handleError.bind(this)))
       .subscribe(() => {
         const deleted = true;
+        // open delete confirmation dialog after successfull delete
         this.dialog.open(MyDialogComponent, {
           data: { ...combinedObject.reporter, deleted }
         });
+        // get the updated data after service call
         this.getAllEmployees();
       });
   }
 
+  // function to update Employee compensation
   updateEmployeeCompensation(emp: Employee) {
     this.employeeService
       .save(emp)
       .pipe(catchError(this.handleError.bind(this)))
       .subscribe(() => {
         const edited = true;
+        // open edit confirmation dialog after successfull update
         this.dialog.open(MyDialogComponent, {
           data: { ...emp, edited }
         });
+        // get the updated data after service call
         this.getAllEmployees();
       });
   }
