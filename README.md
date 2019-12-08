@@ -2,22 +2,23 @@
 
 ## What's Done
 
-- Initially studied the existing project and went throught the requirements of the challenge.
-- Compensation property has been added in the employee.ts file.
+- Initially studied the existing project and went through the requirements of the challenge.
+- Compensation property has been added to the employee.ts file.
 - A field called reports has been added to collect all the direct and indirect reports for the employee.
-- Functionality to list the direct and indirect reports has been added to employee component.ts file.
-- Report rows have been alternately colored and added edit and delete button for all the reports.
-- Event Emitter has been implemented to communicate back to EmployeeList to intitate the service call.
-- App-level component has been created for all the dialogs (edit, delete, edit-confirmation, and delete-confirmation) with the name my-dialog.
-- Added functionality in EmployeeList component to handle the service calls.
+- Functionality to list the direct and indirect reports has been added to the employee component.ts file.
+- Report rows have been alternately colored and added edit and delete buttons for all the reports.
+- Event Emitter has been implemented to communicate back to EmployeeList to initiate the service call.
+- The app-level component has been created for all the dialogs (edit, delete, edit-confirmation, and delete-confirmation) with the name my-dialog.
+- Added functionality in the EmployeeList component to handle the service calls.
 - The page has been styled.
+- Written unit tests to test the functionality of the project. Tested all the functions except the private function.
 - [Link to the Project](https://mindex-challange.firebaseapp.com/)
 
 ## Extras
 
-- The page has been reponsively styled with media queries to make the we page look consistent across all the devices.
-- The employee hierarchy has been visually represented using D3.js which is connected to real-time firestore database (Note: the data for the hierarchy graph is coming from the real-time firestore database. So, the updated data from the app will not be reflected in the graph). the graph has the functionality to add new reports reporting to a employee.
-- The app has been deployed to firebase and can accessed using the below link.
+- The page has been responsively styled with media queries to make the page look consistent across all the devices.
+- The employee hierarchy has been visually represented using D3.js which is connected to real-time firestore database (Note: the data for the hierarchy graph is coming from the real-time firestore database. So, the updated data from the app will not be reflected in the graph). the graph has the functionality to add new reports reporting to an employee.
+- The app has been deployed to firebase and can be accessed using the below link.
 - [Link to the Project](https://mindex-challange.firebaseapp.com/)
 
 ## What's Provided
