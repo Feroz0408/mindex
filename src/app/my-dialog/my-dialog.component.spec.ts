@@ -5,11 +5,8 @@ import {
   MatDialogModule,
   MatDialogRef
 } from "@angular/material/dialog";
-import { By } from "@angular/platform-browser";
 import { MyDialogComponent } from "./my-dialog.component";
 import { BrowserDynamicTestingModule } from "@angular/platform-browser-dynamic/testing";
-import { Employee } from "../employee";
-import { of } from "rxjs";
 import { MatIconModule } from "@angular/material/icon";
 import { FormsModule } from "@angular/forms";
 import { MatFormFieldModule } from "@angular/material/form-field";

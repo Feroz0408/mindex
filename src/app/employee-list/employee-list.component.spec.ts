@@ -1,21 +1,11 @@
-import {
-  async,
-  TestBed,
-  ComponentFixture,
-  fakeAsync
-} from "@angular/core/testing";
+import { async, TestBed, ComponentFixture } from "@angular/core/testing";
 import { Component, Input } from "@angular/core";
 import { EmployeeListComponent } from "./employee-list.component";
 import { EmployeeService } from "../employee.service";
 import { of } from "rxjs";
-import {
-  MAT_DIALOG_DATA,
-  MatDialog,
-  MatDialogModule
-} from "@angular/material/dialog";
+import { MatDialog } from "@angular/material/dialog";
 import { Employee } from "../employee";
 import { By } from "@angular/platform-browser";
-import { tick } from "@angular/core/src/render3";
 
 @Component({ selector: "app-employee", template: "" })
 class EmployeeComponent {
