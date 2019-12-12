@@ -84,7 +84,7 @@ export class EmployeeComponent implements OnInit {
   // function to open the popup on edit or delete icon click and emit the updated compensation value to EmployeeList for service call
   openDialog(employee: any, reporter: any, editDelete: string): void {
     const dialogRef = this.dialog.open(MyDialogComponent, {
-      data: { ...employee, popUpCheck: editDelete }
+      data: { ...reporter, popUpCheck: editDelete }
     });
 
     dialogRef.afterClosed().subscribe(result => {
